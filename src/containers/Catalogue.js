@@ -16,6 +16,7 @@ const Catalogue = props => {
                 category={category.category}
                 picture={category.picture}
                 description={category.description}
+                meals={category.meals}
               />
             </tr>
           ))}
