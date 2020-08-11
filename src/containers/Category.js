@@ -24,6 +24,7 @@ class Category extends React.Component {
         </td>)
       }
     }
+
       return (
         <div>
           {showMeals(window.location.pathname)}

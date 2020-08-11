@@ -15,3 +15,8 @@ code {
 ul {
   list-style: none;
 }
+
+.meal-element > .category-element {
+   display: none;
+   visibility: hidden;
+}
