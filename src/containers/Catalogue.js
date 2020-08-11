@@ -13,6 +13,7 @@ const Catalogue = props => {
           {categories.map(category => (
             <tr key={category.id}>
               <Category
+                id={category.id}
                 category={category.category}
                 picture={category.picture}
                 description={category.description}
