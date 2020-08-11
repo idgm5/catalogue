@@ -34,7 +34,10 @@ class Meals extends React.Component {
           meals.map(meal => (
                 <ul>
                   <li>{meal.strMeal}</li>
-                  <li><img src={meal.strMealThumb} alt={meal} width="200" height="200"/></li>
+                  <li><img src={meal.strMealThumb} alt={meal.strMeal} width="200" height="200"/></li>
+                  <li>
+                    <button onClick={() => window.location.href = ('/meal/' + meal.idMeal)} type="button">View Details</button>
+                  </li>
                 </ul>
           ))
         }

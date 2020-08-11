@@ -10,6 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const initialState = {
   categories: [],
+  isFiltered: false,
 };
 
 const store = createStore(combineReducers, { categories: initialState.categories });
