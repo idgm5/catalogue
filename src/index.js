@@ -9,11 +9,13 @@ import combineReducers from './reducers/index';
 import { BrowserRouter } from 'react-router-dom';
 
 const initialState = {
-  categories: [],
-  isFiltered: false,
+  meals: [],
 };
 
-const store = createStore(combineReducers, { categories: initialState.categories });
+const store = createStore(combineReducers,
+  {
+    meals: initialState.meals,
+  });
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,18 +3,24 @@ import Catalogue from '../containers/Catalogue';
 import Meals from '../components/meals';
 import Details from '../components/details';
 import {Route, Switch} from 'react-router-dom';
+import SearchForm from '../containers/searchForm';
+import SearchResults from '../containers/searchResults';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+          <SearchForm />
            <Switch>
              <Route exact path='/' component={Catalogue}/>
              <Route exact path="/:category">
                <Meals />
              </Route>
-             <Route path="/meal/:details">
+             <Route exact path="/meal/:details">
                <Details />
+             </Route>
+             <Route exact path="/search/:item">
+               <SearchResults />
              </Route>
            </Switch>
       </header>
