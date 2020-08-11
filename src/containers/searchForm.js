@@ -4,24 +4,11 @@ import { connect } from 'react-redux';
 import { SEARCH } from '../actions/index';
 import { withRouter } from 'react-router'
 
-class SearchForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { search: " " };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event, field) {
-    this.setState({ [field]: event.target.value });
-  }
-
-  handleSubmit(event) {
-    const { addItem } = this.props;
-    const { search } = this.state;
-
+const SearchForm = props => {
+  const handleSubmit = event => {
+    const { addItem } = props;
     event.preventDefault();
-    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + search)
+    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + event.target.item.value)
       .then(res => res.json())
       .then(
         (result) => {
@@ -33,20 +20,16 @@ class SearchForm extends React.Component {
           });
         }
       )
-    this.props.history.push(('/search/' + search ));
+    props.history.push(('/search/' + event.target.item.value ));
   }
-
-  render() {
-    const { search } = this.state;
     return (
-      <form id="searchForm" name="searchForm" onSubmit={this.handleSubmit}>
+      <form id="searchForm" name="searchForm" onSubmit={handleSubmit}>
         <div>
-          <input type="text" id="itemInput" name="mealName" placeholder="Fish... Chicken..." onChange={event => this.handleChange(event, 'search')} />
+          <input type="text" id="itemInput" name="item" placeholder="Fish... Chicken..." />
           <input type="submit" value="SEARCH" id="submitBtn" />
         </div>
       </form>
     );
-  }
 }
 
 const mapDispatchToProps = dispatch => ({
