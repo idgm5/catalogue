@@ -2,41 +2,58 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Category from './Category';
+import { CATEGORIES } from '../actions/index';
 
-const Catalogue = props => {
-  const { categories } = props;
+class Catalogue extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { categories: [] };
+  }
 
-  return (
-    <div id="catalogue">
-      <table style={{ width: '100%'}}>
-        <tbody>
-          {categories.map(category => (
-            <tr key={category.id}>
-              <Category
-                id={category.id}
-                category={category.category}
-                picture={category.picture}
-                description={category.description}
-                meals={category.meals}
-              />
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+  componentDidMount() {
+      const { categories } = this.state;
+      fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log(result);
+            this.setState({
+              categories: result.categories
+            });
+          },
+          (error) => {
+            this.setState({
+              error
+            });
+          }
+        )
+    }
+
+  render() {
+    const { categories } = this.state;
+    return (
+      <div id="catalogue">
+        <table style={{ width: '100%'}}>
+          <tbody>
+            {categories.map(category => (
+              <tr key={category.idCategory}>
+                <Category
+                  id={category.idCategory}
+                  category={category.strCategory}
+                  picture={category.strCategoryThumb}
+                  description={category.strCategoryDescription}
+                />
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
 };
-
-const mapStateToProps = state => ({
-  categories: state.categories,
-});
-
-const mapDispatchToProps = dispatch => ({
-});
-
 
 Catalogue.propTypes = {
-  categories: PropTypes.objectOf(typeof ('array')).isRequired,
+  addCategories: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Catalogue);
+export default Catalogue;

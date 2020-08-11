@@ -1,25 +1,46 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 
 class Meals extends React.Component {
-  render() {
-    const { meals, category } = this.props;
-    console.log(window.location.pathname)
-    function sameCategory(){
-      if(('/' + category) === window.location.pathname){
-        return(meals.map(meal => (
-              <ul>
-                <li>{meal.title}</li>
-                <li><img src={meal.picture} alt={meal} width="200" height="200"/></li>
-              </ul>
-        )));
-      } 
+  constructor(props) {
+    super(props);
+    this.state = { meals: [] };
+  }
+
+  componentDidMount() {
+      const { meals } = this.state;
+      let { category } = this.props.match.params;
+      fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=" + category )
+        .then(res => res.json())
+        .then(
+          (result) => {
+            this.setState({
+              meals: result.meals
+            });
+          },
+          (error) => {
+            this.setState({
+              error
+            });
+          }
+        )
     }
+
+  render() {
+    const { meals } = this.state;
     return (
       <div>
-      {sameCategory()}
+        {
+          meals.map(meal => (
+                <ul>
+                  <li>{meal.strMeal}</li>
+                  <li><img src={meal.strMealThumb} alt={meal} width="200" height="200"/></li>
+                </ul>
+          ))
+        }
       </div>
     );
   }
 }
 
-export default Meals;
+export default withRouter(Meals);
