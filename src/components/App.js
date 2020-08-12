@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
           <div className="title">
-            <span></span>
+            <span onClick={() => window.location.href = '/'} ></span>
           </div>
           <SearchForm />
            <Switch>

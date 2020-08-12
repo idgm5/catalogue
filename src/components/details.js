@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Details extends React.Component {
   constructor(props) {
@@ -31,30 +33,24 @@ class Details extends React.Component {
   render() {
     const { mealDetails } = this.state;
     return (
-      <div>
+      <div className="category-element meal-element recipe-element">
         {
           mealDetails.map(detail => (
                 <ul>
-                  <li>{detail.strMeal}</li>
+                  <li id="icon-item"><FontAwesomeIcon icon={faGlobeAmericas} id="icon" />  {detail.strArea}</li>
+                  <li><p>{detail.strMeal}</p></li>
                   <li><img src={detail.strMealThumb} alt={detail.strMeal} width="200" height="200"/></li>
-                  <li>{detail.strCategory}</li>
-                  <li>{detail.strArea}</li>
-                  <li>{detail.strInstructions}</li>
-                  <li>{detail.strYoutube}</li>
-                  <li>{detail.strIngredient1}</li>
-                  <li>{detail.strIngredient2}</li>
-                  <li>{detail.strIngredient3}</li>
-                  <li>{detail.strIngredient4}</li>
-                  <li>{detail.strIngredient5}</li>
-                  <li>{detail.strIngredient6}</li>
-                  <li>{detail.strIngredient7}</li>
-                  <li>{detail.strMeasure1}</li>
-                  <li>{detail.strMeasure2}</li>
-                  <li>{detail.strMeasure3}</li>
-                  <li>{detail.strMeasure4}</li>
-                  <li>{detail.strMeasure5}</li>
-                  <li>{detail.strMeasure6}</li>
-                  <li>{detail.strMeasure7}</li>
+                  <li id="icon-item" className="icon-video"><a href={detail.strYoutube}>Watch Video</a></li>
+                  <li><h3>Ingredients</h3></li>
+                  <li>{detail.strMeasure1}  {detail.strIngredient1}</li>
+                  <li>{detail.strMeasure2}  {detail.strIngredient2}</li>
+                  <li>{detail.strMeasure3}  {detail.strIngredient3}</li>
+                  <li>{detail.strMeasure4}  {detail.strIngredient4}</li>
+                  <li>{detail.strMeasure5}  {detail.strIngredient5}</li>
+                  <li>{detail.strMeasure6}  {detail.strIngredient6}</li>
+                  <li>{detail.strMeasure7}  {detail.strIngredient7}</li>
+                  <li><h3>Instructions</h3></li>
+                  <li><p id="Ingredients">{detail.strInstructions}</p></li>
                 </ul>
           ))
         }
