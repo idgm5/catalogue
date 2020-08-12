@@ -35,7 +35,9 @@ ul {
 #searchForm {
   display: flex;
   justify-content: center;
-  margin: 2% 0;
+  border: 2px solid white;
+  padding: 1rem 0;
+  margin-top: -5px;
 }
 
 #itemInput {
