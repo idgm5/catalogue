@@ -10,6 +10,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+          <div className="title">
+            <span></span>
+          </div>
           <SearchForm />
            <Switch>
              <Route exact path='/' component={Catalogue}/>

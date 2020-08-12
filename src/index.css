@@ -20,3 +20,11 @@ ul {
    display: none;
    visibility: hidden;
 }
+
+.title > span {
+  display: block;
+  background-image: url("/logo.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+}
