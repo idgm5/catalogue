@@ -7,7 +7,6 @@ class Category extends React.Component {
       return (
           <td className="category-element">
               <ul>
-                <li>{category}</li>
                 <li><img src={picture} alt={category} width="400" height="200"/></li>
                 <li>
                   <p>{description}</p>

@@ -48,7 +48,8 @@ ul {
   background: #0E2439;
 }
 
-#submitBtn {
+#submitBtn,
+.category-element > ul > li > button {
   padding: 0.5rem;
   border-radius: 5px;
   border: 0.5px solid white;
@@ -57,4 +58,36 @@ ul {
   font-weight: bold;
   background: #0E2439;
   margin-left: 5px;
+}
+
+.category-element {
+  display: flex;
+  flex-direction: column;
+  background: #0E2439;
+}
+
+.category-element > ul {
+  font-family: Ubuntu;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+}
+
+.category-element > ul > li > img {
+  width: 100%;
+}
+
+.category-element > ul > li > p {
+  display: -webkit-box;
+  width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.625;
+  text-align: justify;
+}
+
+.category-element > ul > li > button {
+  padding: 0.5rem 7rem;
 }
