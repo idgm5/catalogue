@@ -9,13 +9,15 @@ const SearchResults = props => {
      return <p>{meals}</p>;
    } else {
      return (meals.map(meal => (
+        <div className="category-element meal-element">
            <ul>
-             <li>{meal.strMeal}</li>
+             <li><p>{meal.strMeal}</p></li>
              <li><img src={meal.strMealThumb} alt={meal.strMeal} width="200" height="200"/></li>
              <li>
-               <button onClick={() => window.location.href = ('/meal/' + meal.idMeal)} type="button">View Details</button>
+               <button onClick={() => window.location.href = ('/meal/' + meal.idMeal)} type="button">View Recipe</button>
              </li>
            </ul>
+        </div>
      )));
    }
  }

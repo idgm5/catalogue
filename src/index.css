@@ -102,6 +102,7 @@ ul {
 
 .meal-element > ul > li > img {
   width: 80%;
+  border-radius: 5px;
 }
 
 .meal-element > ul > li > button {
