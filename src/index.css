@@ -28,7 +28,7 @@ ul {
   display: block;
   background-image: url("/logo.gif");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   height: 100px;
 }
 
@@ -37,7 +37,6 @@ ul {
   justify-content: center;
   border: 2px solid white;
   padding: 1rem 0;
-  margin-top: -5px;
 }
 
 #itemInput {
@@ -60,6 +59,7 @@ ul {
   font-weight: bold;
   background: #0E2439;
   margin-left: 5px;
+  text-transform: uppercase;
 }
 
 .category-element {
@@ -92,4 +92,19 @@ ul {
 
 .category-element > ul > li > button {
   padding: 0.5rem 7rem;
+}
+
+.meal-element > ul > li > p {
+  line-height: 1.5rem;
+  overflow: visible;
+  text-align: center;
+}
+
+.meal-element > ul > li > img {
+  width: 80%;
+}
+
+.meal-element > ul > li > button {
+  margin-top: 1rem;
+  padding: 0.5rem 6rem;
 }
