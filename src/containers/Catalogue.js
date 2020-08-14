@@ -27,7 +27,7 @@ class Catalogue extends React.Component {
   render() {
     const { categories } = this.state;
     return (
-      <div id="catalogue">
+      <div id="catalogue" data-testid="catalogue">
         <table style={{ width: '100%' }}>
           <tbody>
             {categories.map(category => (

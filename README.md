@@ -21,6 +21,10 @@ Run  `npm install` and then `npm start` finally open your web browser at `http:/
 
 [Hosted on Heroku](https://hungry-house.herokuapp.com/)
 
+## Presentation
+
+[Loom Video](https://www.loom.com/share/5332ec2fd2d84d469eb72bee1b27bea4)
+
 ## Screenshot
 ![image](https://i.imgur.com/sMxG45A.png)
 
@@ -39,6 +43,38 @@ Tools used on this project
 
 - Atom Editor
 - Heroku
+
+## Instructions to run the tests
+
+- Open terminal on your workspace with
+
+```
+cd /home/projects_workspace/catalogue..
+```
+
+- Install dependencies
+
+```
+npm install
+```
+
+- Install Jest
+
+```
+npm install --save-dev jest
+```
+
+- Install Babel
+
+```
+npm i -D @babel/preset-env
+```
+
+- Run the tests
+
+```
+npm test
+```
 
 ## Author
 
