@@ -11,7 +11,7 @@ const Category = props => {
   return (
     <td className="category-element" data-testid={category}>
       <ul>
-        <li><img src={picture} alt={category} width="400" height="200" data-testid="image"/></li>
+        <li><img src={picture} alt={category} width="400" height="200" data-testid="image" /></li>
         <li>
           <p>{description}</p>
         </li>

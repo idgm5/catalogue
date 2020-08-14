@@ -8,6 +8,7 @@ import Meals from './meals';
 import Details from './details';
 import SearchForm from '../containers/searchForm';
 import SearchResults from '../containers/searchResults';
+
 function App() {
   return (
     <div className="App">
@@ -16,18 +17,18 @@ function App() {
           <span onClick={() => window.location.href = '/'} />
         </div>
         <SearchForm />
-          <Switch>
-            <Route exact path="/" component={Catalogue} />
-            <Route exact path="/:category">
-              <Meals />
-            </Route>
-            <Route exact path="/meal/:details">
-              <Details />
-            </Route>
-            <Route exact path="/search/:item">
-              <SearchResults />
-            </Route>
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={Catalogue} />
+          <Route exact path="/:category">
+            <Meals />
+          </Route>
+          <Route exact path="/meal/:details">
+            <Details />
+          </Route>
+          <Route exact path="/search/:item">
+            <SearchResults />
+          </Route>
+        </Switch>
       </header>
     </div>
 

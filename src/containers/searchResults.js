@@ -1,4 +1,5 @@
 /* eslint-disable no-return-assign */
+/* eslint-disable react/forbid-prop-types */
 
 import React from 'react';
 import { connect } from 'react-redux';
@@ -41,7 +42,7 @@ const mapStateToProps = state => ({
 });
 
 SearchResults.propTypes = {
-  meals: PropTypes.objectOf(typeof ('array')).isRequired,
+  meals: PropTypes.array.isRequired,
 };
 
 export default connect(mapStateToProps)(SearchResults);
