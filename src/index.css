@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: white;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  width: 400px;
+  background-color: black;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
+
+ul {
+  list-style: none;
+}
+
+.title > span {
+  display: block;
+  background-image: url("/logo.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  cursor: pointer;
+}
+
+#searchForm {
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
+  padding: 1rem 0;
+}
+
+#itemInput {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 0.5px solid white;
+  font-family: Ubuntu, sans-serif;
+  font-weight: bold;
+  color: white;
+  background: #0e2439;
+}
+
+#submitBtn,
+.category-element > ul > li > button,
+.icon-video {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 0.5px solid white;
+  color: white;
+  font-family: Ubuntu, sans-serif;
+  font-weight: bold;
+  background: #0e2439;
+  margin-left: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.category-element {
+  display: flex;
+  flex-direction: column;
+  background: #0e2439;
+}
+
+.category-element > ul {
+  font-family: Ubuntu, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+}
+
+.category-element > ul > li > img {
+  width: 100%;
+}
+
+.category-element > ul > li > p {
+  display: -webkit-box;
+  width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.625;
+  text-align: justify;
+}
+
+.category-element > ul > li > button {
+  padding: 0.5rem 7rem;
+}
+
+.meal-element > ul > li > p {
+  line-height: 1.5rem;
+  overflow: visible;
+  text-align: center;
+}
+
+.meal-element > ul > li > img {
+  width: 80%;
+  border-radius: 5px;
+}
+
+.meal-element > ul > li > button {
+  margin-top: 1rem;
+  padding: 0.5rem 6rem;
+}
+
+.recipe-element {
+  background: transparent;
+}
+
+.recipe-element > ul > li > img {
+  width: 100%;
+  height: 100%;
+}
+
+#Ingredients {
+  -webkit-line-clamp: inherit;
+  white-space: break-spaces;
+  margin: 0;
+  text-align: justify;
+  line-height: 2;
+}
+
+#icon-item {
+  margin: 0.5rem 0;
+  font-size: 18px;
+}
+
+.icon-video {
+  text-align: center !important;
+}
+
+.icon-video > a {
+  text-decoration: none;
+  color: white;
+}
