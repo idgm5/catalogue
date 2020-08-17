@@ -140,7 +140,7 @@ ul {
 }
 
 #Ingredients {
-  -webkit-line-clamp: none;
+  -webkit-line-clamp: inherit;
   white-space: break-spaces;
   margin: 0;
   text-align: justify;

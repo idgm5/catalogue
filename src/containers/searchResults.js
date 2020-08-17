@@ -24,15 +24,13 @@ const SearchResults = props => {
     )));
   }
   return (
-    <div id="searchlist">
-      <table style={{
+    <div
+      id="searchlist"
+      style={{
         width: '100%',
       }}
-      >
-        <tbody>
-          {isNull()}
-        </tbody>
-      </table>
+    >
+      {isNull()}
     </div>
   );
 };

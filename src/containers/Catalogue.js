@@ -28,20 +28,16 @@ class Catalogue extends React.Component {
     const { categories } = this.state;
     return (
       <div id="catalogue" data-testid="catalogue">
-        <table style={{ width: '100%' }}>
-          <tbody>
-            {categories.map(category => (
-              <tr key={category.idCategory}>
-                <Category
-                  id={category.idCategory}
-                  category={category.strCategory}
-                  picture={category.strCategoryThumb}
-                  description={category.strCategoryDescription}
-                />
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {categories.map(category => (
+          <div key={category.idCategory}>
+            <Category
+              id={category.idCategory}
+              category={category.strCategory}
+              picture={category.strCategoryThumb}
+              description={category.strCategoryDescription}
+            />
+          </div>
+        ))}
       </div>
     );
   }

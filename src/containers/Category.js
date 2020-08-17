@@ -9,7 +9,7 @@ const Category = props => {
     category, picture, description,
   } = props;
   return (
-    <td className="category-element" data-testid={category}>
+    <div className="category-element" data-testid={category}>
       <ul>
         <li><img src={picture} alt={category} width="400" height="200" data-testid="image" /></li>
         <li>
@@ -19,13 +19,17 @@ const Category = props => {
           <button onClick={() => window.location.href = (`/${category}`)} type="button">View Meals</button>
         </li>
       </ul>
-    </td>
+    </div>
   );
 };
 
 Category.propTypes = {
   picture: PropTypes.any.isRequired,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
   description: PropTypes.string.isRequired,
+};
+
+Category.defaultProps = {
+  category: 'no category',
 };
 export default Category;
